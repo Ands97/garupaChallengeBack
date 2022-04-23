@@ -6,6 +6,7 @@ const router = Router();
 
 router.post('/register', UserController.create);
 router.post('/login', UserController.login);
+router.post('/validateToken', UserController.validateToken)
 router.get('/users', Auth.private, UserController.getUsers);
 router.get('/userId/:id', Auth.private, UserController.getUserById);
 router.put('/updateUser/:id', Auth.private, UserController.updateUser);

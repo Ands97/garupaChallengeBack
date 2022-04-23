@@ -61,7 +61,7 @@ export const login = async (req: Request, res: Response) => {
                     process.env.JWT_SECRET_KEY as string,
                     {expiresIn: '48h'}
                 )
-                res.json({status: true, token})
+                res.json({status: true, token, user})
                 return;
             }else{
                 res.json({message:'Senha incorreta', status: false})
@@ -71,6 +71,17 @@ export const login = async (req: Request, res: Response) => {
         }
     }else{
         res.json({status:false})
+    }
+}
+
+export const validateToken = async(req: Request, res: Response) => {
+    const token = req.body.token
+
+    try{
+        const data = JWT.verify(token, process.env.JWT_SECRET_KEY as string)
+        res.json({user: data})
+    }catch(error){
+        res.json(error)
     }
 }
 
