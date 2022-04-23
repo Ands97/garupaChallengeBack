@@ -48,7 +48,7 @@ Na rota ('/api/deleUser/:id') recebo o id do usuário a ser deletado por parâme
 
 
 ## Back end web
-Pré-requisitos: npm / yarn / typeScript global /Postgre
+Pré-requisitos: npm / yarn / typeScript global /Postgres
 
 ```bash
 # clonar repositório
