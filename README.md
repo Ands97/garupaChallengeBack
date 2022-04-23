@@ -52,7 +52,7 @@ Pré-requisitos: npm / yarn / typeScript global /Postgre
 
 ```bash
 # clonar repositório
-git clone 
+git clone https://github.com/Ands97/garupaChallengeBack.git
 
 # entrar na pasta do projeto 
 cd path
