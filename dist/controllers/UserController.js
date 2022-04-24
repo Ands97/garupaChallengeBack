@@ -14,14 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteUser = exports.updateUser = exports.getUserById = exports.getUsers = exports.validateToken = exports.login = exports.create = void 0;
 const User_1 = require("../models/User");
-const uuidv4_1 = require("uuidv4");
+const uuid_1 = require("uuid");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 // Create user
 const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (req.body.email && req.body.password && req.body.name) {
         const { name, email, password } = req.body;
-        const id = (0, uuidv4_1.uuid)();
+        const id = (0, uuid_1.v4)();
         const hasUser = yield User_1.User.findOne({ where: { email } });
         if (!hasUser) {
             const newUser = yield User_1.User.create({
