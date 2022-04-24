@@ -48,7 +48,7 @@ Na rota ('/api/deleUser/:id') recebo o id do usuário a ser deletado por parâme
 
 
 ## Back end web
-Pré-requisitos: npm / yarn / typeScript global /Postgres
+Pré-requisitos: npm / yarn / typeScript global /Postgres/
 Adicionar as variáveis de ambiente no arquivo .env
 - PORT
 - PG_DB
