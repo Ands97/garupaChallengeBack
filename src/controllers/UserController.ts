@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../models/User";
-import { uuid } from "uuidv4";
+import { v4 as uuidv4 } from 'uuid';
 import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
 
@@ -8,7 +8,7 @@ import JWT from "jsonwebtoken";
 export const create = async (req: Request, res: Response) => {
     if (req.body.email && req.body.password && req.body.name) {
         const { name, email, password } = req.body;
-        const id = uuid();
+        const id = uuidv4();
 
         const hasUser = await User.findOne({ where: { email } });
 
